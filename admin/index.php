@@ -10,7 +10,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>SUN RISE ADMIN</title>
+  <title>PARADISE ADMIN</title>
   
   
      
@@ -20,13 +20,7 @@
 </head>
 
 <body>
-  <div id="clouds">
-	<div class="cloud x1"></div>
-	<!-- Time for multiple clouds to dance around -->
-	<div class="cloud x2"></div>
-	<div class="cloud x3"></div>
-	<div class="cloud x4"></div>
-	<div class="cloud x5"></div>
+  <div id="clouds" style=" background: url(../images/about.jpg) no-repeat 0px 0px; background-size: 100% 100%;">
 </div>
 
  <div class="container">
@@ -51,7 +45,7 @@
       </div> <!-- end login -->
 
     </div>
-    <div class="bottom">  <h3><a href="../index.php">SUN RISE HOMEPAGE</a></h3></div>
+    <div class="bottom">  <h3><a href="../index.php">PARADISE RESORT HOMEPAGE</a></h3></div>
   
   
 </body>

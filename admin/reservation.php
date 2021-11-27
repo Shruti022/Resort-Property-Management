@@ -1,12 +1,17 @@
 <?php
-include('db.php')
+include('db.php');
+session_start();  
+if(!isset($_SESSION["user"]))
+{
+ header("location:index.php");
+}
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RESERVATION SUNRISE HOTEL</title>
+    <title>RESERVATION PARADISE RESORT</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -17,13 +22,64 @@ include('db.php')
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" style=" background: #4b0082;">
+    <nav class="navbar navbar-default top-navbar" role="navigation" style=" background: #4b0082;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.php" style=" background: #4b0082;"><?php echo $_SESSION["user"]; ?> </a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="usersetting.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
+                    
+                    <!-- <li>
+                        <a  href="home.php"><i class="fa fa-home"></i> Dashboard</a>
+                    </li> -->
+                    <li>
+                        <a href="home.php"><i class="fa fa-dashboard"></i> Status</a>
+                    </li>
+                    <li>
+                    <a style=" background: #7b68ee;" href="reservation.php"><i class="fa fa-desktop"></i> Reservation </a>
+                    </li>
+					<li>
+                        <a href="roombook.php"><i class="fa fa-bar-chart-o"></i>Room Booking</a>
+                    </li>
+                    <li>
+                        <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
+                    </li>
                     <li>
                         <a  href="../index.php"><i class="fa fa-home"></i> Homepage</a>
+                    </li>
+                    <li>
+                        <a href="logout.php" ><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                     
 					</ul>
@@ -83,10 +139,10 @@ include('db.php')
 							   <div class="form-group">
                                             <label>Nationality*</label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="nation"  value="Sri Lankan" checked="">Sri Lankan
+                                                <input type="radio" name="nation"  value="Indian" checked="">Indian
                                             </label>
                                             <label class="radio-inline">
-                                                <input type="radio" name="nation"  value="Non Sri Lankan ">Non Sri Lankan 
+                                                <input type="radio" name="nation"  value="Non Indian">Non Indian 
                                             </label>
                          
                                 </div>
@@ -223,7 +279,7 @@ include('db.php')
 
 									else
 									{
-										$new ="Not Conform";
+										$new ="Not Confirm";
 										$newUser="INSERT INTO `roombook`(`Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`,`stat`,`nodays`) VALUES ('$_POST[title]','$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[nation]','$_POST[country]','$_POST[phone]','$_POST[troom]','$_POST[bed]','$_POST[nroom]','$_POST[meal]','$_POST[cin]','$_POST[cout]','$new',datediff('$_POST[cout]','$_POST[cin]'))";
 										if (mysqli_query($con,$newUser))
 										{

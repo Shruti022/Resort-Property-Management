@@ -108,22 +108,22 @@ if(!isset($_SESSION["user"]))
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
-                    <li>
-                        <a  href="home.php"><i class="fa fa-dashboard"></i> Status</a>
+				<li>
+                        <a style=" background: #7b68ee;" class="active-menu" href="home.php"><i class="fa fa-dashboard"></i> Status</a>
                     </li>
                     <li>
-                        <a href="messages.php"><i class="fa fa-desktop"></i> News Letters</a>
+                        <a href="reservation.php"><i class="fa fa-desktop"></i> Reservation </a>
                     </li>
 					<li>
-                        <a class="active-menu" href="roombook.php"><i class="fa fa-bar-chart-o"></i> Room Booking</a>
+                        <a style=" background: #7b68ee;"  href="roombook.php"><i class="fa fa-bar-chart-o"></i> Room Booking</a>
                     </li>
                     <li>
                         <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
                     </li>
-					<li>
-                        <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
+                    <li>
+                        <a  href="../index.php"><i class="fa fa-home"></i> Homepage</a>
                     </li>
-                    
+                   
                     <li>
                         <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
@@ -156,7 +156,7 @@ if(!isset($_SESSION["user"]))
 					<div class="col-md-8 col-sm-8">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                           Booking Conformation
+                           Booking Confirmation
                         </div>
                         <div class="panel-body">
 							
@@ -246,15 +246,15 @@ if(!isset($_SESSION["user"]))
                         <div class="panel-footer">
                             <form method="post">
 										<div class="form-group">
-														<label>Select the Conformation</label>
+														<label>Select the Confirmation</label>
 														<select name="conf"class="form-control">
 															<option value selected>	</option>
-															<option value="Conform">Conform</option>
+															<option value="Confirm">Confirm</option>
 															
 															
 														</select>
 										 </div>
-							<input type="submit" name="co" value="Conform" class="btn btn-success">
+							<input type="submit" name="co" value="Confirm" class="btn btn-success">
 							
 							</form>
                         </div>
@@ -462,7 +462,7 @@ if(!isset($_SESSION["user"]))
 							
 							 
 							
-							if($st=="Conform")
+							if($st=="Confirm")
 							{
 									$urb = "UPDATE `roombook` SET `stat`='$st' WHERE id = '$id'";
 									
@@ -491,20 +491,20 @@ if(!isset($_SESSION["user"]))
 												 $type_of_room = 0;       
 														if($troom=="Superior Room")
 														{
-															$type_of_room = 320;
+															$type_of_room = 3200;
 														
 														}
 														else if($troom=="Deluxe Room")
 														{
-															$type_of_room = 220;
+															$type_of_room = 2200;
 														}
 														else if($troom=="Guest House")
 														{
-															$type_of_room = 180;
+															$type_of_room = 1800;
 														}
 														else if($troom=="Single Room")
 														{
-															$type_of_room = 150;
+															$type_of_room = 1500;
 														}
 														
 														
@@ -563,7 +563,7 @@ if(!isset($_SESSION["user"]))
 															$rpsql = "UPDATE `room` SET `place`='$notfree',`cusid`='$id' where bedding ='$bed' and type='$troom' ";
 															if(mysqli_query($con,$rpsql))
 															{
-															echo "<script type='text/javascript'> alert('Booking Conform')</script>";
+															echo "<script type='text/javascript'> alert('Booking Confirm')</script>";
 															echo "<script type='text/javascript'> window.location='roombook.php'</script>";
 															}
 															

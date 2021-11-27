@@ -10,7 +10,7 @@ if(!isset($_SESSION["user"]))
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SUNRISE HOTEL</title>
+    <title>PARADISE RESORT</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -25,9 +25,9 @@ if(!isset($_SESSION["user"]))
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="wrapper">
+    <div id="wrapper" style=" background: #4b0082;">
         
-        <nav class="navbar navbar-default top-navbar" role="navigation">
+        <nav class="navbar navbar-default top-navbar" role="navigation" style=" background: #4b0082;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -35,7 +35,7 @@ if(!isset($_SESSION["user"]))
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.php"><?php echo $_SESSION["user"]; ?> </a>
+                <a class="navbar-brand" href="home.php" style=" background: #4b0082;"><?php echo $_SESSION["user"]; ?> </a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -66,16 +66,16 @@ if(!isset($_SESSION["user"]))
                         <a href="home.php"><i class="fa fa-dashboard"></i> Status</a>
                     </li>
                     <li>
-                        <a  href="messages.php"><i class="fa fa-desktop"></i> News Letters</a>
+                    <a href="reservation.php"><i class="fa fa-desktop"></i> Reservation </a>
                     </li>
 					<li>
                         <a href="roombook.php"><i class="fa fa-bar-chart-o"></i>Room Booking</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
+                        <a style=" background: #7b68ee;" href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
                     </li>
                     <li>
-                        <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
+                        <a  href="../index.php"><i class="fa fa-home"></i> Homepage</a>
                     </li>
                     <li>
                         <a href="logout.php" ><i class="fa fa-sign-out fa-fw"></i> Logout</a>
