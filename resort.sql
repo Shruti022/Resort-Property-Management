@@ -20,9 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `resort`
 --
-
 -- --------------------------------------------------------
-
 --
 -- Table structure for table `contact`
 --
